@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Home - ProFix</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Arquivos CSS do Vendor -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Arquivo CSS Principal -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos para o menu de perfil */
+    #profileMenuItem {
+      position: relative;
+    }
+
+    #profileMenuItem .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    #profileMenuItem:hover .dropdown-menu {
+      display: block;
+    }
+
+    #profileMenuItem .dropdown-menu a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #profileMenuItem .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    #profileMenuItem .dropdown-divider {
+      margin: 0.5rem 0;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    #profileMenuItem .dropdown-toggle {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #profileMenuItem .dropdown-toggle:hover {
+      color: #0a58ca;
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Descomente a linha abaixo se desejar usar um logo em imagem -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <i class="bi bi-buildings"></i>
+        <h1 class="sitename">ProFix</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="width:100%;">
+        <ul style="display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; margin: 0;">
+          <li><a href="solicitar-orcamento.html">Solicitar Orçamento</a></li>
+          <li><a href="academics.html">Serviços Disponíveis</a></li>
+          <li><a href="#" id="perfilMenuBtn">Perfil</a></li>
+          <li id="profileMenuItem" style="display: none; margin-left: 130px;">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i> <span id="profileName">Perfil</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="profileLink">Meu Perfil</a></li>
+              <li><a href="#" id="dashboardLink">Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#" onclick="handleLogout()">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Seção Hero -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="hero-container">
+        <video autoplay="" muted="" loop="" playsinline="" class="video-background">
+          <source src="assets/img/education/video-2.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="100">
+              <div class="hero-content">
+                <h1>Facilitando Seu Dia a Dia com Serviços Profissionais</h1>
+                <p>Serviços de qualidade para sua casa ou empresa, realizados por profissionais qualificados. Oferecemos soluções completas em limpeza, manutenção e pequenos reparos. Cuidamos de tudo para você ter mais tempo e tranquilidade. </p>
+                <div class="cta-buttons">
+                  <a href="login.html" class="btn-primary" id="solicitarOrcamentoBtn">Solicitar Orçamento</a>
+                  <a href="login.html" class="btn-secondary" id="prestarServicoBtn">Prestar Serviço</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
+              <div class="stats-card">
+                <div class="stats-header">
+                  <h3>Avaliação de Prestador</h3>
+                  <div class="decoration-line"></div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="stat-image me-3">
+                    <img src="assets/img/person/prestador.png" alt="Marco Antônio" class="img-fluid rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+                  </div>
+                  <div class="stat-content">
+                    <h4 class="mb-1">Marco Antônio</h4>
+                    <p class="mb-1">Serviço: Eletricista</p>
+                    <p class="mb-0">Avaliação: 
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-ticker">
+        <div class="container">
+          <div class="row gy-4">
+            
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Seção Hero -->
+
+    <!-- Seção Sobre -->
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row mb-5">
+          <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <h2 class="display-6 fw-bold mb-4">Conectando Você ao Profissional Certo</h2>
+            <p class="lead mb-4">A ProFix é a sua plataforma para encontrar prestadores de serviços qualificados para sua casa ou empresa. Solicite orçamentos, compare profissionais e resolva tudo de forma rápida, segura e transparente.</p>
+            <ul class="mb-4" style="font-size:1.1rem;">
+              <li>• Serviços de manutenção, limpeza, reformas, instalações e muito mais</li>
+              <li>• Profissionais avaliados e de confiança</li>
+              <li>• Facilidade para clientes e oportunidades para prestadores</li>
+            </ul>
+            <div class="d-flex align-items-center mt-4 signature-block">
+              <img src="assets/img/education/profix.png" alt="Equipe ProFix" width="120">
+              <div class="ms-3">
+                <p class="mb-0 fw-bold">Equipe ProFix</p>
+                <p class="mb-0 text-muted">Soluções para o seu dia a dia</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="image-stack">
+              <div class="image-stack-item image-stack-item-top" data-aos="zoom-in" data-aos-delay="400">
+                <img src="assets/img/education/jardineiro-1024x576.png" alt="Serviços em ação" class="img-fluid rounded-4 shadow-lg">
+              </div>
+              <div class="image-stack-item image-stack-item-bottom" data-aos="zoom-in" data-aos-delay="500">
+                <img src="assets/img/education/encanador.jpg" alt="Clientes satisfeitos" class="img-fluid rounded-4 shadow-lg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mission-vision-row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="value-card h-100">
+              <div class="card-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <h3>Para Clientes</h3>
+              <p>Encontre o profissional ideal, solicite orçamentos e resolva tudo sem complicação.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="value-card h-100">
+              <div class="card-icon">
+                <i class="bi bi-tools"></i>
+              </div>
+              <h3>Para Prestadores</h3>
+              <p>Cadastre-se, receba oportunidades e aumente sua renda prestando serviços de qualidade.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="value-card h-100">
+              <div class="card-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3>Segurança e Confiança</h3>
+              <p>Todos os profissionais são avaliados e você conta com o suporte da ProFix em todo o processo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Seção Sobre -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative dark-background">
+    <div class="container text-center py-4">
+      <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+        <span class="sitename" style="font-size: 2.5rem; color: white;">ProFix</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Arquivos JS do Vendor -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Arquivo JS de Autenticação -->
+  <script src="assets/script/auth.js"></script>
+
+  <!-- Arquivo JS Principal -->
+  <script src="assets/script/main.js"></script>
+
+  <script>
+    // Redirecionamento do botão "Solicitar Orçamento"
+    document.getElementById('solicitarOrcamentoBtn').addEventListener('click', function(event) {
+      event.preventDefault(); // Previne o comportamento padrão do link
+
+      const isLoggedIn = isUserLoggedIn();
+      const currentUser = getCurrentUser();
+
+      if (isLoggedIn && currentUser && currentUser.type === 'client') {
+        window.location.href = 'solicitar-orcamento.html';
+      } else {
+        window.location.href = 'login.html';
+      }
+    });
+
+    // Redirecionamento do botão "Prestar Serviço"
+    document.getElementById('prestarServicoBtn').addEventListener('click', function(event) {
+      event.preventDefault(); // Previne o comportamento padrão do link
+
+      const isLoggedIn = isUserLoggedIn();
+      const currentUser = getCurrentUser();
+
+      if (isLoggedIn && currentUser && currentUser.type === 'provider') {
+        window.location.href = 'academics.html'; // Redireciona para a página de serviços do prestador
+      } else {
+        window.location.href = 'login.html';
+      }
+    });
+
+    // Script para exibir/ocultar o item do menu de perfil
+    document.addEventListener('DOMContentLoaded', function() {
+      const profileMenuItem = document.getElementById('profileMenuItem');
+      const isLoggedIn = isUserLoggedIn();
+      const currentUser = getCurrentUser();
+
+      if (isLoggedIn) {
+        if (profileMenuItem) {
+          profileMenuItem.style.display = 'list-item';
+        }
+        if (currentUser && currentUser.name) {
+          const profileNameSpan = document.getElementById('profileName');
+          if (profileNameSpan) {
+            profileNameSpan.textContent = currentUser.name;
+          }
+        }
+        const profileLink = document.getElementById('profileLink');
+        const dashboardLink = document.getElementById('dashboardLink');
+        if (currentUser && currentUser.type === 'provider') {
+          if (profileLink) profileLink.href = 'provider-profile.html';
+          if (dashboardLink) dashboardLink.href = 'provider-dashboard.html';
+        } else if (currentUser && currentUser.type === 'client') {
+           if (profileLink) profileLink.href = 'client-profile.html';
+           if (dashboardLink) dashboardLink.style.display = 'none'; // Clientes geralmente não têm dashboard
+        }
+
+      } else {
+        if (profileMenuItem) {
+          profileMenuItem.style.display = 'none';
+        }
+      }
+    });
+
+    function handleLogout() {
+      logoutUser();
+      window.location.href = 'index.html';
+    }
+
+    // Botão Perfil dinâmico
+    document.addEventListener('DOMContentLoaded', function() {
+      const perfilMenuBtn = document.getElementById('perfilMenuBtn');
+      if (perfilMenuBtn) {
+        const currentUser = getCurrentUser && getCurrentUser();
+        if (currentUser && currentUser.type === 'provider') {
+          perfilMenuBtn.href = 'provider-profile.html';
+        } else if (currentUser && currentUser.type === 'client') {
+          perfilMenuBtn.href = 'client-profile.html';
+        } else {
+          perfilMenuBtn.href = 'login.html';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

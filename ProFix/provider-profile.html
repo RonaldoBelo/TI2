@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Perfil do Prestador - ProFix</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Arquivos CSS do Vendor -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Arquivo CSS Principal -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos para o menu de perfil */
+    #profileMenuItem {
+      position: relative;
+    }
+
+    #profileMenuItem .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    #profileMenuItem:hover .dropdown-menu {
+      display: block;
+    }
+
+    #profileMenuItem .dropdown-menu a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #profileMenuItem .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    #profileMenuItem .dropdown-divider {
+      margin: 0.5rem 0;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    #profileMenuItem .dropdown-toggle {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #profileMenuItem .dropdown-toggle:hover {
+      color: #0a58ca;
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+      color: white;
+      padding: 120px 0 40px 0;
+      margin-bottom: 40px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 8px 32px rgba(13,110,253,0.08);
+    }
+    .profile-header .profile-photo {
+      border: 6px solid #fff;
+      box-shadow: 0 4px 24px rgba(13,110,253,0.10);
+      margin-bottom: 18px;
+    }
+    .profile-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .profile-header p.mb-2 {
+      font-size: 1.2rem;
+      color: #e3f2fd;
+      font-weight: 500;
+    }
+    .profile-header .rating {
+      color: #ffc107;
+      font-size: 1.3rem;
+    }
+    .profile-header .availability {
+      color: #e3f2fd;
+      font-size: 1.05rem;
+      margin-top: 8px;
+    }
+    .profile-content {
+      padding: 30px 0 20px 0;
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(13,110,253,0.07);
+      padding: 32px 28px 28px 28px;
+      margin-bottom: 32px;
+      border: 1px solid #e3f2fd;
+    }
+    .profile-card h3 {
+      color: #0d6efd;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .profile-card h4 {
+      color: #0a58ca;
+      font-size: 1.1rem;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .service-badge {
+      background: #e3f2fd;
+      color: #0d6efd;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      display: inline-block;
+      font-size: 0.98rem;
+    }
+    .profile-card ul.list-unstyled li {
+      color: #333;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+    .profile-card button.btn-primary {
+      background: linear-gradient(90deg, #0d6efd 60%, #0dcaf0 100%);
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(13,110,253,0.08);
+    }
+    .profile-card button.btn-primary:hover {
+      background: linear-gradient(90deg, #0dcaf0 0%, #0d6efd 100%);
+    }
+    .portfolio-item img {
+      border: 3px solid #e3f2fd;
+      box-shadow: 0 2px 8px rgba(13,110,253,0.06);
+    }
+    .profile-card .availability i {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Descomente a linha abaixo se desejar usar um logo em imagem -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <i class="bi bi-buildings"></i>
+        <h1 class="sitename">ProFix</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="width:100%;">
+        <ul style="display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; margin: 0;">
+          <li><a href="solicitar-orcamento.html">Solicitar Orçamento</a></li>
+          <li><a href="academics.html">Serviços Disponíveis</a></li>
+          <li><a href="provider-dashboard.html" id="dashboardBtn">Dashboard</a></li>
+          <li id="profileMenuItem" style="display: none; margin-left: 130px;">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i> <span id="profileName">Perfil</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="profileLink">Meu Perfil</a></li>
+              <li><a href="#" id="dashboardLink">Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#" onclick="handleLogout()">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 text-center">
+          <img src="assets/img/profile-placeholder.jpg" alt="Foto de Perfil" class="profile-photo">
+        </div>
+        <div class="col-md-9">
+          <h1>João Silva</h1>
+          <p class="mb-2">Eletricista Profissional</p>
+          <div class="rating mb-2">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+            <span class="text-white ms-2">4.5 (128 avaliações)</span>
+          </div>
+          <div class="availability">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Disponível para novos serviços</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container profile-content">
+    <div class="row">
+      <!-- Coluna Principal -->
+      <div class="col-md-8">
+        <!-- Sobre -->
+        <div class="profile-card">
+          <h3>Sobre</h3>
+          <p>Eletricista profissional com mais de 10 anos de experiência em instalações residenciais e comerciais. Especializado em projetos elétricos, manutenção preventiva e corretiva.</p>
+          
+          <h4 class="mt-4">Serviços Oferecidos</h4>
+          <div class="service-badges">
+            <span class="service-badge">Instalações Elétricas</span>
+              <span class="service-badge">Manutenção Preventiva</span>
+              <span class="service-badge">Projetos Elétricos</span>
+              <span class="service-badge">Adequação à NR-10</span>
+          </div>
+        </div>
+
+        <!-- Portfólio -->
+        <div class="profile-card">
+          <h3>Portfólio</h3>
+          <div class="row">
+            <div class="col-md-6 portfolio-item">
+              <img src="assets/img/portfolio-1.jpg" alt="Projeto 1">
+              <h5>Instalação Comercial</h5>
+              <p>Projeto completo de instalação elétrica para loja comercial</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+              <img src="assets/img/portfolio-2.jpg" alt="Projeto 2">
+              <h5>Residência</h5>
+              <p>Reforma completa da instalação elétrica residencial</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avaliações -->
+        <div class="profile-card">
+          <h3>Avaliações</h3>
+          <div class="review mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <img src="assets/img/user-1.jpg" alt="Usuário" class="rounded-circle" width="40" height="40">
+              <div class="ms-3">
+                <h5 class="mb-0">Maria Santos</h5>
+                <div class="rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <p>"Excelente profissional! Muito pontual e organizado. Resolveu todos os problemas elétricos da minha casa."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-md-4">
+        <!-- Informações de Contato -->
+        <div class="profile-card">
+          <h3>Informações de Contato</h3>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="bi bi-telephone me-2"></i>
+              (11) 99999-9999
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-envelope me-2"></i>
+              joao.silva@email.com
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-geo-alt me-2"></i>
+              São Paulo, SP
+            </li>
+          </ul>
+          <button class="btn btn-primary w-100">Solicitar Orçamento</button>
+        </div>
+
+        <!-- Disponibilidade -->
+        <div class="profile-card">
+          <h3>Disponibilidade</h3>
+          <div class="availability">
+            <i class="bi bi-calendar-check"></i>
+            <span>Segunda a Sexta: 8h às 18h</span>
+          </div>
+          <div class="availability">
+            <i class="bi bi-calendar-check"></i>
+            <span>Sábado: 8h às 12h</span>
+          </div>
+        </div>
+
+        <!-- Certificações -->
+        <div class="profile-card">
+          <h3>Certificações</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-award me-2"></i>
+              NR-10 Básico
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-award me-2"></i>
+              Instalador de Sistemas Fotovoltaicos
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/script/main.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Busca os dados do prestador logado
+      const provider = JSON.parse(localStorage.getItem('currentProvider'));
+      if (!provider) {
+          window.location.href = 'login.html';
+          return;
+      }
+
+      // Preenche o nome completo no header
+      const nomeCompleto = (provider.firstName && provider.lastName) ? `${provider.firstName} ${provider.lastName}` : (provider.name || 'Prestador');
+      document.querySelector('.profile-header h1').textContent = nomeCompleto;
+
+      // Preenche o tipo de serviço
+      const serviceType = provider.serviceType || '';
+      document.querySelector('.profile-header p.mb-2').textContent = serviceType.charAt(0).toUpperCase() + serviceType.slice(1);
+
+      // Preenche informações de contato
+      const contatoList = document.querySelectorAll('.profile-card ul.list-unstyled li');
+      if (contatoList.length >= 3) {
+          contatoList[0].innerHTML = '<i class="bi bi-telephone me-2"></i>' + (provider.phone || '');
+          contatoList[1].innerHTML = '<i class="bi bi-envelope me-2"></i>' + (provider.email || '');
+          contatoList[2].innerHTML = '<i class="bi bi-geo-alt me-2"></i>' + (provider.address || '');
+      }
+
+      // Preenche experiência e valor/hora na seção "Sobre"
+      const sobreCard = document.querySelectorAll('.profile-card')[0];
+      if (sobreCard) {
+          let sobreText = '';
+          if (provider.experience) {
+              sobreText += `<b>Experiência:</b> ${provider.experience} anos<br>`;
+          }
+          if (provider.hourlyRate) {
+              sobreText += `<b>Valor/hora:</b> R$ ${provider.hourlyRate}<br>`;
+          }
+          sobreCard.querySelector('p').innerHTML = sobreText || 'Prestador cadastrado na plataforma.';
+      }
+  });
+  </script>
+</body>
+
+</html> 

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Perfil do Cliente - ProFix</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Arquivos CSS do Vendor -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Arquivo CSS Principal -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos para o menu de perfil */
+    #profileMenuItem {
+      position: relative;
+    }
+
+    #profileMenuItem .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    #profileMenuItem:hover .dropdown-menu {
+      display: block;
+    }
+
+    #profileMenuItem .dropdown-menu a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #profileMenuItem .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    #profileMenuItem .dropdown-divider {
+      margin: 0.5rem 0;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    #profileMenuItem .dropdown-toggle {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #profileMenuItem .dropdown-toggle:hover {
+      color: #0a58ca;
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+      color: white;
+      padding: 40px 0;
+      margin-bottom: 30px;
+    }
+    .profile-content {
+      padding: 20px;
+    }
+    .profile-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      margin-bottom: 20px;
+    }
+    .service-card {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .service-status {
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .status-pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+    .status-in-progress {
+      background: #cce5ff;
+      color: #004085;
+    }
+    .status-completed {
+      background: #d4edda;
+      color: #155724;
+    }
+    .address-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Descomente a linha abaixo se desejar usar um logo em imagem -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <i class="bi bi-buildings"></i>
+        <h1 class="sitename">ProFix</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="width:100%;">
+        <ul style="display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; margin: 0;">
+          <li><a href="solicitar-orcamento.html">Solicitar Orçamento</a></li>
+          <li><a href="academics.html">Serviços Disponíveis</a></li>
+          <li><a href="provider-dashboard.html" id="dashboardBtn">Dashboard</a></li>
+          <li id="profileMenuItem" style="display: none; margin-left: 130px;">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i> <span id="profileName">Perfil</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="profileLink">Meu Perfil</a></li>
+              <li><a href="#" id="dashboardLink">Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#" onclick="handleLogout()">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Profile Header -->
+  <div class="profile-header" style="margin-top: 80px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 text-center">
+          <img src="assets/img/profile-placeholder.jpg" alt="Foto de Perfil" class="profile-photo">
+        </div>
+        <div class="col-md-9">
+          <h1>Maria Santos</h1>
+          <p class="mb-2">Cliente desde 2024</p>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-shield-check me-2"></i>
+            <span>Conta Verificada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container profile-content">
+    <div class="row">
+      <!-- Coluna Principal -->
+      <div class="col-md-8">
+        <!-- Serviços Ativos -->
+        <div class="profile-card">
+          <h3>Serviços Ativos</h3>
+          <div class="service-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-0">Instalação Elétrica</h5>
+              <span class="service-status status-in-progress">Em Andamento</span>
+            </div>
+            <p class="mb-2">Instalação de tomadas e iluminação na sala de estar</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Início: 15/03/2024</small>
+              <button class="btn btn-outline-primary btn-sm">Ver Detalhes</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-0">Manutenção Hidráulica</h5>
+              <span class="service-status status-pending">Aguardando Confirmação</span>
+            </div>
+            <p class="mb-2">Reparo de vazamento no banheiro</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Solicitado: 20/03/2024</small>
+              <button class="btn btn-outline-primary btn-sm">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Histórico de Serviços -->
+        <div class="profile-card">
+          <h3>Histórico de Serviços</h3>
+          <div class="service-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-0">Pintura de Parede</h5>
+              <span class="service-status status-completed">Concluído</span>
+            </div>
+            <p class="mb-2">Pintura do quarto principal</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">Concluído em: 10/03/2024</small>
+              <button class="btn btn-outline-primary btn-sm">Ver Detalhes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-md-4">
+        <!-- Informações Pessoais -->
+        <div class="profile-card">
+          <h3>Informações Pessoais</h3>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="bi bi-envelope me-2"></i>
+              maria.santos@email.com
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-telephone me-2"></i>
+              (11) 99999-9999
+            </li>
+          </ul>
+          <button class="btn btn-outline-primary w-100">Editar Perfil</button>
+        </div>
+
+        <!-- Endereços -->
+        <div class="profile-card">
+          <h3>Meus Endereços</h3>
+          <div class="address-card">
+            <h5>Residência Principal</h5>
+            <p class="mb-0">Rua das Flores, 123 - Apto 45<br>
+            Jardim Primavera - São Paulo, SP</p>
+          </div>
+          <button class="btn btn-outline-primary w-100">Gerenciar Endereços</button>
+        </div>
+
+        <!-- Métodos de Pagamento -->
+        <div class="profile-card">
+          <h3>Métodos de Pagamento</h3>
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-credit-card me-2"></i>
+            <span>Cartão de Crédito terminando em 1234</span>
+          </div>
+          <button class="btn btn-outline-primary w-100">Gerenciar Pagamentos</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arquivos JS do Vendor -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Arquivo JS Principal -->
+  <script src="assets/script/main.js"></script>
+</body>
+
+</html> 

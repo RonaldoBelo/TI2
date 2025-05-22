@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Dashboard do Prestador - ProFix</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Ícones -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Arquivos CSS do Vendor -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Arquivo CSS Principal -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos para o menu de perfil */
+    #profileMenuItem {
+      position: relative;
+    }
+
+    #profileMenuItem .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    #profileMenuItem:hover .dropdown-menu {
+      display: block;
+    }
+
+    #profileMenuItem .dropdown-menu a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #profileMenuItem .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    #profileMenuItem .dropdown-divider {
+      margin: 0.5rem 0;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    #profileMenuItem .dropdown-toggle {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #profileMenuItem .dropdown-toggle:hover {
+      color: #0a58ca;
+    }
+
+    .dashboard-page {
+      min-height: 100vh;
+      background: #f8f9fa;
+      padding-top: 90px;
+    }
+    #header.header {
+      background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%) !important;
+      box-shadow: 0 2px 16px rgba(13,110,253,0.07), 0 1.5px 8px rgba(0,0,0,0.04);
+      z-index: 1030;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .dashboard-content {
+      padding: 32px 0 20px 0;
+    }
+    .dashboard-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(13,110,253,0.07);
+      padding: 32px 28px 28px 28px;
+      margin-bottom: 32px;
+      border: 1px solid #e3f2fd;
+    }
+    .dashboard-card h2, .dashboard-card h3 {
+      color: #0d6efd;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .dashboard-card p, .dashboard-card .stat-label {
+      color: #555;
+      font-size: 1.08rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: #e3f2fd;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(13,110,253,0.06);
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+    .stat-label {
+      color: #0a58ca;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .dashboard-card button.btn-primary, .dashboard-card button.btn-outline-danger {
+      background: linear-gradient(90deg, #0d6efd 60%, #0dcaf0 100%);
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(13,110,253,0.08);
+      color: #fff;
+    }
+    .dashboard-card button.btn-primary:hover, .dashboard-card button.btn-outline-danger:hover {
+      background: linear-gradient(90deg, #0dcaf0 0%, #0d6efd 100%);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Descomente a linha abaixo se desejar usar um logo em imagem -->
+          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <i class="bi bi-buildings"></i>
+          <h1 class="sitename">ProFix</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu" style="width:100%;">
+          <ul style="display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; margin: 0;">
+            <li><a href="solicitar-orcamento.html">Solicitar Orçamento</a></li>
+            <li><a href="academics.html">Serviços Disponíveis</a></li>
+            <li><a href="provider-dashboard.html" id="dashboardBtn">Dashboard</a></li>
+            <li id="profileMenuItem" style="display: none; margin-left: 130px;">
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-person-circle"></i> <span id="profileName">Perfil</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#" id="profileLink">Meu Perfil</a></li>
+                <li><a href="#" id="dashboardLink">Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a href="#" onclick="handleLogout()">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+      <div class="container">
+        <div class="dashboard-card">
+          <h2 class="welcome-message" id="welcomeMessage">Bem-vindo(a)!</h2>
+          <p>Este é seu painel de controle como prestador de serviços.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="pendingServicesCount">0</div>
+            <div class="stat-label">Serviços Pendentes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="acceptedServicesCount">0</div>
+            <div class="stat-label">Serviços Aceitos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="completedServicesCount">0</div>
+            <div class="stat-label">Serviços Concluídos</div>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3>Serviços Aceitos</h3>
+          <div id="acceptedServicesContainer">
+            <p class="text-muted">Nenhum serviço aceito no momento.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Arquivos JS do Vendor -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Arquivo JS de Autenticação -->
+  <script src="assets/script/auth.js"></script>
+
+  <!-- Arquivo JS Principal -->
+  <script src="assets/script/main.js"></script>
+
+  <script src="assets/script/config.js"></script>
+  <script src="assets/script/services.js"></script>
+  <script>
+    // Verifica se o usuário está logado e é um prestador
+    window.onload = function() {
+      if (!isUserLoggedIn() || !isProvider()) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      const user = getCurrentUser();
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const userData = users.find(u => u.email === user.email);
+
+      if (userData) {
+        // Atualiza informações do usuário
+        document.getElementById('welcomeMessage').textContent = `Bem-vindo(a), ${user.name}!`;
+        document.getElementById('profileName').textContent = `${userData.firstName} ${userData.lastName}`;
+      }
+
+      // Atualiza o dashboard
+      updateDashboard();
+    }
+
+    function handleLogout() {
+      logoutUser();
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html> 

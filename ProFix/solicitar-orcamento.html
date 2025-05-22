@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Solicitar Serviço - ProFix</title>
+  <meta name="description" content="Solicite um serviço profissional através do ProFix">
+  <meta name="keywords" content="serviços, orçamento, profissionais, ProFix">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom JavaScript -->
+  <script src="assets/script/services.js"></script>
+  <script src="assets/script/config.js"></script>
+
+  <style>
+    /* Estilos para o menu de perfil */
+    #profileMenuItem {
+      position: relative;
+    }
+
+    #profileMenuItem .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    #profileMenuItem:hover .dropdown-menu {
+      display: block;
+    }
+
+    #profileMenuItem .dropdown-menu a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #profileMenuItem .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    #profileMenuItem .dropdown-divider {
+      margin: 0.5rem 0;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    #profileMenuItem .dropdown-toggle {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #profileMenuItem .dropdown-toggle:hover {
+      color: #0a58ca;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: NiceSchool
+  * Template URL: https://bootstrapmade.com/nice-school-bootstrap-education-template/
+  * Updated: May 10 2025 with Bootstrap v5.3.6
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="contact-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <i class="bi bi-buildings"></i>
+        <h1 class="sitename">ProFix</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="width:100%;">
+        <ul style="display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; margin: 0;">
+          <li><a href="solicitar-orcamento.html">Solicitar Orçamento</a></li>
+          <li><a href="academics.html">Serviços Disponíveis</a></li>
+          <li><a href="provider-dashboard.html" id="dashboardBtn">Dashboard</a></li>
+          <li id="profileMenuItem" style="display: none; margin-left: 130px;">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i> <span id="profileName">Perfil</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="profileLink">Meu Perfil</a></li>
+              <li><a href="#" id="dashboardLink">Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#" onclick="handleLogout()">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); padding: 60px 0; position: relative;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9zdmc+'); opacity: 0.5;"></div>
+      <div class="container position-relative" style="padding-top: 40px; text-align: center;">
+        <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Solicitar Serviço</h1>
+        <p style="font-size: 1rem; margin-bottom: 0.5rem;">Preencha o formulário abaixo para solicitar um orçamento do serviço desejado. Nossos profissionais entrarão em contato em breve.</p>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      </div>
+
+      <!-- Background Image Section -->
+      <div class="map-section" data-aos="fade-up" data-aos-delay="200">
+        <img src="assets/img/education/showcase-1.webp" alt="Serviços" style="width: 100%; height: 500px; object-fit: cover;">
+      </div>
+
+      <!-- Contact Form Section -->
+      <div class="container form-container-overlap" style="margin-top: -375px;">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-10">
+            <div class="contact-form-wrapper">
+              <h2 class="text-center mb-4">Solicite seu Serviço</h2>
+
+              <form id="serviceForm" action="forms/contact.php" method="post" class="php-email-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="clientName" class="form-label">Nome</label>
+                      <div class="input-with-icon">
+                        <i class="bi bi-person"></i>
+                        <input type="text" class="form-control" name="name" id="clientName" placeholder="Seu Nome" required readonly>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="category" class="form-label">Categoria</label>
+                      <div class="input-with-icon">
+                        <i class="bi bi-tag"></i>
+                        <select class="form-control" name="category" id="category" required>
+                          <option value="">Selecione a categoria</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="budget" class="form-label">Orçamento</label>
+                      <div class="input-with-icon">
+                        <i class="bi bi-currency-dollar"></i>
+                        <input type="number" class="form-control" name="budget" id="budget" placeholder="Valor Desejado (R$)" min="0" step="0.01">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Campo para Horário de Disponibilidade -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="availabilityStart" class="form-label">Horário de Disponibilidade</label>
+                      <div class="row g-2 align-items-center">
+                        <div class="col">
+                          <div class="input-with-icon">
+                            <i class="bi bi-clock"></i>
+                            <select class="form-control" name="availabilityStart" id="availabilityStart" required>
+                              <option value="">00:00</option>
+                              <option value="01:00">01:00</option>
+                              <option value="02:00">02:00</option>
+                              <option value="03:00">03:00</option>
+                              <option value="04:00">04:00</option>
+                              <option value="05:00">05:00</option>
+                              <option value="06:00">06:00</option>
+                              <option value="07:00">07:00</option>
+                              <option value="08:00">08:00</option>
+                              <option value="09:00">09:00</option>
+                              <option value="10:00">10:00</option>
+                              <option value="11:00">11:00</option>
+                              <option value="12:00">12:00</option>
+                              <option value="13:00">13:00</option>
+                              <option value="14:00">14:00</option>
+                              <option value="15:00">15:00</option>
+                              <option value="16:00">16:00</option>
+                              <option value="17:00">17:00</option>
+                              <option value="18:00">18:00</option>
+                              <option value="19:00">19:00</option>
+                              <option value="20:00">20:00</option>
+                              <option value="21:00">21:00</option>
+                              <option value="22:00">22:00</option>
+                              <option value="23:00">23:00</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-auto text-center" style="padding: 0 5px;">até</div>
+                        <div class="col">
+                          <div class="input-with-icon">
+                            <i class="bi bi-clock"></i>
+                            <select class="form-control" name="availabilityEnd" id="availabilityEnd" required>
+                              <option value="">00:00</option>
+                              <option value="01:00">01:00</option>
+                              <option value="02:00">02:00</option>
+                              <option value="03:00">03:00</option>
+                              <option value="04:00">04:00</option>
+                              <option value="05:00">05:00</option>
+                              <option value="06:00">06:00</option>
+                              <option value="07:00">07:00</option>
+                              <option value="08:00">08:00</option>
+                              <option value="09:00">09:00</option>
+                              <option value="10:00">10:00</option>
+                              <option value="11:00">11:00</option>
+                              <option value="12:00">12:00</option>
+                              <option value="13:00">13:00</option>
+                              <option value="14:00">14:00</option>
+                              <option value="15:00">15:00</option>
+                              <option value="16:00">16:00</option>
+                              <option value="17:00">17:00</option>
+                              <option value="18:00">18:00</option>
+                              <option value="19:00">19:00</option>
+                              <option value="20:00">20:00</option>
+                              <option value="21:00">21:00</option>
+                              <option value="22:00">22:00</option>
+                              <option value="23:00">23:00</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="clientAddress" class="form-label">Endereço</label>
+                      <div class="input-with-icon position-relative">
+                        <i class="bi bi-geo-alt"></i>
+                        <input type="text" class="form-control" name="address" id="clientAddress" placeholder="Endereço Completo" required>
+                        <button type="button" class="btn btn-outline-primary position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%);" onclick="toggleAddressEdit()">
+                          Alterar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <div class="input-with-icon">
+                        <i class="bi bi-chat-dots message-icon"></i>
+                        <textarea class="form-control" name="description" placeholder="Descreva o serviço que você precisa..." style="height: 180px" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="loading">Enviando...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Sua solicitação foi enviada com sucesso! Em breve entraremos em contato.</div>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-submit">SOLICITAR ORÇAMENTO</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">NiceSchool</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Hic solutasetp</h4>
+          <ul>
+            <li><a href="#">Molestiae accusamus iure</a></li>
+            <li><a href="#">Excepturi dignissimos</a></li>
+            <li><a href="#">Suscipit distinctio</a></li>
+            <li><a href="#">Dilecta</a></li>
+            <li><a href="#">Sit quas consectetur</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nobis illum</h4>
+          <ul>
+            <li><a href="#">Ipsam</a></li>
+            <li><a href="#">Laudantium dolorum</a></li>
+            <li><a href="#">Dinera</a></li>
+            <li><a href="#">Trodelas</a></li>
+            <li><a href="#">Flexo</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/script/main.js"></script>
+
+  <script>
+    // Preenche automaticamente os campos de nome e endereço do cliente ao carregar a página
+    function preencherCamposCliente() {
+        const userName = localStorage.getItem('userName') || '';
+        const userAddress = localStorage.getItem('userAddress') || '';
+        document.getElementById('clientName').value = userName;
+        document.getElementById('clientAddress').value = userAddress;
+    }
+
+    // Função para alternar a edição do endereço
+    function toggleAddressEdit() {
+        const addressInput = document.getElementById('clientAddress');
+        const isReadOnly = addressInput.readOnly;
+        if (isReadOnly) {
+            addressInput.readOnly = false;
+            addressInput.focus();
+        } else {
+            addressInput.readOnly = true;
+            // Salva o novo endereço no localStorage
+            localStorage.setItem('userAddress', addressInput.value);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verifica login e tipo de usuário
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const userType = localStorage.getItem('userType');
+        if (isLoggedIn !== 'true' || userType !== 'client') {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        // Preenche campos do cliente
+        preencherCamposCliente();
+        document.getElementById('clientAddress').readOnly = true;
+
+        // Adiciona event listener ao formulário
+        const serviceForm = document.getElementById('serviceForm');
+        if (serviceForm) {
+            serviceForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(serviceForm);
+                const clientName = localStorage.getItem('userName') || formData.get('name') || '';
+                const address = localStorage.getItem('userAddress') || formData.get('address') || '';
+                const availabilityStart = formData.get('availabilityStart') || '';
+                const availabilityEnd = formData.get('availabilityEnd') || '';
+                const availability = (availabilityStart && availabilityEnd) ? `${availabilityStart} até ${availabilityEnd}` : '';
+                const service = {
+                    clientName: clientName,
+                    category: formData.get('category'),
+                    budget: formData.get('budget'),
+                    availability: availability,
+                    address: address,
+                    description: formData.get('description')
+                };
+                // Adiciona o serviço usando o ServiceManager
+                const serviceManager = new ServiceManager();
+                serviceManager.addService(service);
+                alert('Serviço solicitado com sucesso!');
+                serviceForm.reset();
+                preencherCamposCliente(); // repopula após reset
+            });
+        }
+
+        // Carrega as categorias no select
+        const categorySelect = document.getElementById('category');
+        const categories = getAllCategories();
+        categorySelect.innerHTML = '<option value="">Selecione a categoria</option>';
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.id;
+            option.textContent = category.name;
+            categorySelect.appendChild(option);
+        });
+    });
+  </script>
+
+</body>
+
+</html>

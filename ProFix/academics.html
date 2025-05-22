@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Serviços Disponíveis - ProFix</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom JavaScript -->
+  <script src="assets/script/services.js"></script>
+
+  <style>
+    /* Estilos para o menu de perfil */
+    #profileMenuItem {
+      position: relative;
+    }
+
+    #profileMenuItem .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    #profileMenuItem:hover .dropdown-menu {
+      display: block;
+    }
+
+    #profileMenuItem .dropdown-menu a {
+      color: #333;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #profileMenuItem .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    #profileMenuItem .dropdown-divider {
+      margin: 0.5rem 0;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+
+    #profileMenuItem .dropdown-toggle {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #profileMenuItem .dropdown-toggle:hover {
+      color: #0a58ca;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .service-card .card-header {
+      background: #f8f9fa;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .service-card .card-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
+
+    .service-card .card-body {
+      padding: 20px;
+    }
+
+    .service-card .card-body p {
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .service-card .card-footer {
+      padding: 15px;
+      background: #f8f9fa;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+    }
+
+    .status-badge {
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .status-badge.pending {
+      background: #ffeeba;
+      color: #856404;
+    }
+
+    .status-badge.accepted {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status-badge.rejected {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: NiceSchool
+  * Template URL: https://bootstrapmade.com/nice-school-bootstrap-education-template/
+  * Updated: May 10 2025 with Bootstrap v5.3.6
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="academics-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <i class="bi bi-buildings"></i>
+        <h1 class="sitename">ProFix</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="width:100%;">
+        <ul style="display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; margin: 0;">
+          <li><a href="solicitar-orcamento.html">Solicitar Orçamento</a></li>
+          <li><a href="academics.html">Serviços Disponíveis</a></li>
+          <li><a href="provider-dashboard.html" id="dashboardBtn">Dashboard</a></li>
+          <li id="profileMenuItem" style="display: none; margin-left: 130px;">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i> <span id="profileName">Perfil</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="profileLink">Meu Perfil</a></li>
+              <li><a href="#" id="dashboardLink">Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#" onclick="handleLogout()">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); padding: 60px 0; position: relative;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9zdmc+'); opacity: 0.5;"></div>
+      <div class="container position-relative" style="padding-top: 40px; text-align: center;">
+        <h1>Serviços Solicitados</h1>
+        <p>Visualize e gerencie os serviços solicitados pelos clientes.</p>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Services Section -->
+    <section id="services" class="academics section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="intro-wrapper">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="200">
+              <div class="intro-image">
+                <img src="assets/img/education/p.png" alt="Academic Programs" class="img-fluid rounded-lg shadow">
+                <div class="accent-shape"></div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="intro-content">
+                <span class="subtitle">Área do Prestador</span>
+                <h2>Gerencie Suas Solicitações de Serviço</h2>
+                <p class="intro-text">Aqui você pode visualizar todos os serviços solicitados que correspondem às suas categorias de atuação, aceitar novos trabalhos e acompanhar o andamento.</p>
+                <!-- Remove key highlights or adapt them if needed -->
+                <!--
+                <div class="key-highlights">
+                  <div class="highlight-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Experiential learning opportunities</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>World-class faculty members</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Cutting-edge research facilities</span>
+                  </div>
+                </div>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="programs-navigation" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-12">
+              <div class="program-tabs">
+                <ul class="nav nav-tabs justify-content-center" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-services-tab" data-bs-toggle="tab" data-bs-target="#services-all" type="button" role="tab">
+                      <span class="icon"><i class="bi bi-grid-3x3-gap"></i></span>
+                      <span class="text">Todos os Serviços</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="my-category-tab" data-bs-toggle="tab" data-bs-target="#services-my-category" type="button" role="tab">
+                      <span class="icon"><i class="bi bi-mortarboard"></i></span>
+                      <span class="text">Minha Categoria</span>
+                    </button>
+                  </li>
+                  <!-- Add more tabs for other categories as needed -->
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="other-services-tab" data-bs-toggle="tab" data-bs-target="#services-other-categories" type="button" role="tab">
+                      <span class="icon"><i class="bi bi-book"></i></span>
+                      <span class="text">Outras Categorias</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content programs-content" data-aos="fade-up" data-aos-delay="200">
+          <!-- All Services Tab -->
+          <div class="tab-pane fade show active" id="services-all" role="tabpanel">
+            <div class="row g-4" id="allServices">
+              <!-- Service items will be loaded here by JavaScript -->
+            </div>
+          </div>
+
+          <!-- My Category Services Tab -->
+          <div class="tab-pane fade" id="services-my-category" role="tabpanel">
+            <div class="row g-4" id="categoryServices">
+              <!-- Service items for provider's category will be loaded here by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Other Categories Services Tab -->
+          <div class="tab-pane fade" id="services-other-categories" role="tabpanel">
+            <div class="row g-4" id="otherServices">
+              <!-- Service items for other categories will be loaded here by JavaScript -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/script/main.js"></script>
+  <!-- Auth JS File -->
+  <script src="assets/script/auth.js"></script>
+
+  <script src="assets/script/config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Verifica se o usuário está logado como prestador
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const userType = localStorage.getItem('userType');
+      
+      if (isLoggedIn !== 'true' || userType !== 'provider') {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Carrega os serviços
+      loadServices();
+
+      // Adiciona event listeners para as abas
+      const tabButtons = document.querySelectorAll('.nav-link');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Remove a classe active de todas as abas
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          // Adiciona a classe active na aba clicada
+          button.classList.add('active');
+          
+          // Atualiza o conteúdo da aba
+          const targetId = button.getAttribute('data-bs-target').substring(1);
+          const tabContents = document.querySelectorAll('.tab-pane');
+          tabContents.forEach(content => {
+            content.classList.remove('show', 'active');
+            if (content.id === targetId) {
+              content.classList.add('show', 'active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
